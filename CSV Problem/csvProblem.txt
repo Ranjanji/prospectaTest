@@ -1,0 +1,46 @@
+Theoretical Challenge
+Suppose you have a CSV file with the data below.
+A1: 5, A2: 7, A3: 9, B1: 3, B2: 8, B3: =4+5, C1: =5+A1, C2: =A2+B2, C3: =C2+B3
+This can be represented in an excel sheet below:
+
+Q. I want a program that will take the CSV input above and produce CSV output with
+the results. If it is a value, then return a value.  
+If it is a formula then calculate the formula and return the value of that formula.
+
+Answer:-
+First read the csv file using Scanner class then split the input data using useDelimiter()
+then Create a data structure like map to store the values and formulas in memory. 
+We can use a 2-dimensional array or a map to store the values and formulas.
+Loop through the data structure and evaluate each formula. 
+If a cell contains a formula, we can parse the formula and If the cell contains a value,
+we can simply add it to the output.
+
+
+How will you tackle the challenge above? What type of errors you would you check for?
+How might a user break your code?
+Answer:-
+Parsing errors may occur If the input file is malformed, we need to handle 
+parsing errors and provide informative error messages to the user.
+
+Formula or Syntax references error: If a formula refers to itself or to a cell that refers back to it,
+ we need to detect this and handle it appropriately. Or if the given cell in the formula is already empty we may get errors.
+
+File format error and also file not found error may occurs. 
+
+Formula syntax errors: If a formula contains syntax errors,
+we need to detect these and provide informative error messages to the user.
+
+Division by zero errors: Our formulas may contains divisor values and we need to handle this exceptions.
+
+
+Write the results to a CSV output file
+
+Answer:-
+
+   A   B  C 
+1  5   3  10
+
+2  7   8  15
+
+3  9   9  24
+
